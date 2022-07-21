@@ -1,0 +1,111 @@
+<!-- Copyright (c) 2022 Sagar Bisht  -->
+
+<!-- --- ----- ----- --- -- - - - -- - -- - -->
+<!doctype>
+<html>
+  <head>
+     <meta data-rh="true" name="theme-color" content="#000000" />
+     <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@362&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width,minimum-scale=1,initial-scale=1"
+    />
+    <script src="include/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/login.css">
+    <title> iPhotos-SignIn</title>
+    <style>
+      body{
+        margin:10px;
+        display:flex;
+         font-family: "Rubik", sans-serif;
+        justify-content:space-around;
+        align-items:center;
+        flex-wrap:wrap;
+        
+      }
+     
+    
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+         <center>
+      <h1>
+        Sign in with email
+      </h1>
+  <p>
+        Enter the email address  and password associated with your account.
+      </p>
+            <!-- Login -->
+            <input type="email" class="textbox login_box" id="txt_email" name="txt_email" placeholder="Email" /><br>
+        
+            <input type="Password" class="textbox login_box" id="txt_pwd"  name="txt_pwd" placeholder="Password"/><br>
+        
+            <input type="button" value="LOG IN" name="btn-submit" id="btn-submit"  class="login_box"/>
+
+            <small id="message"></small>
+        
+</center> 
+<b>Admin account-</b> <br>Email- admin@iphotos.com <br> Password- 123 <br>
+<b>Premium account-</b> <br>Email- premium@iphotos.com <br> Password- 123 <br>
+<b>
+  Normal account-
+</b> <br>Email- nonpremium@iphotos.com <br> Password- 123 <br>
+
+    </div>
+    <div class="branding">
+      <center>
+      <hr>
+      <h3 class="quotes">
+       IPHOTOS- Photos that touch you
+      </h3>
+      <small > idea Foundation.</small>
+        </center>
+    </div>
+  </body>
+
+  <script type="text/javascript">
+    
+    $(document).ready(function(){
+        var email='';
+        let pass='';
+       
+        $('#btn-submit').click(function(){
+          
+            $('#message').html("<span style='color:#15c18b;'>Please wait..</span>");
+            email=$('#txt_email').val();
+            pass=$('#txt_pwd').val();
+            if(email==''|| pass==''){
+                $("#message").html("<span style='color:#red;'>Fill credentials </span>");
+            }else {
+             
+                $.ajax({
+                    url:'login.php',
+                    type:'post',
+                    data:{email:email,pass:pass},
+                    success:function(res){
+                        let msg="";
+                        console.log(res);
+                        if(res==1){
+                            window.location="home.php";
+                        }else if(res==2){
+                          window.location="admin/deshboard.php";
+                        }
+                        else if(res==0){
+                            msg="Invalid credentials"
+                        }else{
+                           
+                        }
+                        $("#message").html(msg);
+                    }
+                })
+            }
+
+        });
+        
+    });
+  </script>
+</html>

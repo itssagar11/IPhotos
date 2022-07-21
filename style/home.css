@@ -1,0 +1,29 @@
+main{
+margin: auto;
+width: 90%;
+margin-top: 10px;
+
+
+}
+
+.img-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    border: 1px solid green;
+}
+.img-box{
+    width: 250px;
+    height: 430px;
+    border: 1px solid blue;
+    overflow: hidden;
+}
+.img-sub-box{
+
+}
+
+.img{
+    width: 250px;
+    height: 300px;
+}
