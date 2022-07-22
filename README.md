@@ -1,5 +1,5 @@
 # IPhotos
-Change database Password in include/config.php
+Change database Password in include/config.php.
 Admin account-
 Email- admin@iphotos.com
 Password- 123
