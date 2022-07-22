@@ -16,15 +16,19 @@ require_once("../include/config.php");
 
 <!-- jQuery library -->
 <script src="../include/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
 <script src="../include/bootstrap.min.js"></script>
-<script src="script/script.js"></script>
     </head>
     <body>
-        <header >
-
-            <a href="../logout.php">Logout</a>
-        </header>
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+   
+    
+    <ul class="nav navbar-nav navbar-right">
+      <
+      <li><a href="../logout.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+        
     </body>
 </html>

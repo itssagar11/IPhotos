@@ -1,3 +1,4 @@
+
 <?php
 require_once("config.php");
     session_start();
@@ -9,11 +10,16 @@ require_once("config.php");
     $user=$_SESSION["login_user"];
 
 ?>
-
-<!doctype>
 <html>
     <head>
     <title> Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="include/jquery.min.js"></script>
+    
+<!-- jQuery library -->
+
+<script src="include/bootstrap.min.js"></script>
+
 
     <style>
         body{
@@ -33,10 +39,18 @@ require_once("config.php");
     </head>
     <body>
 
-    <header>
-        <span><?php if($user["role"]==1){ echo "Premium";}else {echo "Not Premium. Subscribe Now";}?></span>
-        <span class="logout"><a href="./logout.php"> Logout</a></span>
-    </header>
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+   
+  <span class="navbar-brand"><?php if($user["type"]==1){ echo "Premium";}else {echo "Not Premium. Subscribe Now";}?></span>
+    <ul class="nav navbar-nav navbar-right">
+      
+      <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+       
+       
     
 
 
